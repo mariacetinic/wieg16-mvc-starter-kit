@@ -62,18 +62,19 @@ class Database {
 	 * Klura ut hur du skall sätt ihop rätt textsträng för x=y...
 	 * Implode kommer inte ta dig hela vägen den här gången
 	 * Kanske array_map eller foreach?
-	 */
+
 	public function update($table, $id, $data) {
 		$columns = array_keys($data);
 
 		$sql = "UPDATE $table SET (x=y...) WHERE id = :id";
 	}
-
+     */
 	/**
 	 * Skriv den här själv!
 	 * Titta på getById för struktur
-	 */
+
 	public function delete($table, $id) {
 
-	}
+	}*/
+
 }

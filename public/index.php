@@ -22,8 +22,8 @@ $dsn = "mysql:host=".$config['host'].";dbname=".$config['db'].";charset=".$confi
 $pdo = new PDO($dsn, $config['user'], $config['password'], $config['options']);
 $db = new Database($pdo);
 
-/*
-Exempel börjar här! Ta bort detta om du vill
+
+//Exempel börjar här! Ta bort detta om du vill
 
 $db->create('recipes', [
 	'name' => "Makaroner",
@@ -45,8 +45,8 @@ $recipeModel->create([
 	'user_id' => 1
 ]);
 
-Exempel slutar här
-*/
+//Exempel slutar här
+
 
 /**
  * Routing
@@ -61,16 +61,18 @@ Exempel slutar här
  * och kunna få en bra översikt över vad som händer. Om det ligger för mycket kod i varje case
  * så blir det svårt att få en översikt.
  */
-//$controller = new Controller($baseDir);
+$controller = new Controller($baseDir);
 $url = $path($_SERVER['REQUEST_URI']);
 switch ($url) {
 	case '/':
 		//$controller->index();
 		require $baseDir.'/views/index.php';
 	break;
-	case '/create-recipe':
+
+	//det här funkar inte.
+	case '/create-recipe': //skrivs i urlen
 		// Detta är ett enkelt exempel på hur vi skulle kunna spara datan vid en create.
-		// $controller->createRecipe($recipeModel, $_POST);
+		$controller->createRecipe($recipeModel, $_POST);
 		$recipeModel = new RecipeModel($db);
 		$recipeId = $recipeModel->create($_POST);
 
@@ -78,6 +80,10 @@ switch ($url) {
 		// Vi skickar med id:t på receptet som sparades för att kunna använda oss av det i vår vy.
 		header('Location: /?id='.$recipeId);
 	break;
+    case '/create':
+        //$controller->index();
+        require $baseDir.'/views/create.php';
+        break;
 	default:
 		header('HTTP/1.0 404 Not Found');
 		echo 'Page not found';
