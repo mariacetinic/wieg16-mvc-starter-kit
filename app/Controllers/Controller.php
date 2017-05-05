@@ -35,6 +35,11 @@ class Controller {
 	}
 
 
+    /**
+     * @param $recipeModel
+     * @param $id
+     * @return mixed
+     */
     public function deleteRecipe($recipeModel, $id) {
         return $recipeModel->delete($id);
     }

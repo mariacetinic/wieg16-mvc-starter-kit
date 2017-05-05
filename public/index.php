@@ -109,13 +109,15 @@ switch ($url) {
 
         break;
 
+        //eftersom delete är en länk så är det $_GET och inte $_POST(posts används i formulär och i ajax sammanhang
     case '/delete-recipe':
         $recipeModel = new RecipeModel($db);
         $recipeId = $recipeModel->delete([
-            'id' => $_POST['id']
+            'id' => $_GET['id']
         ]);
-        header('Location: /?id='.$recipeId);
+
         break;
+
 	default:
 		header('HTTP/1.0 404 Not Found');
 		echo 'Page not found';

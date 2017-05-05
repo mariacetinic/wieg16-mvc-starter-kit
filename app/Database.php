@@ -53,7 +53,12 @@ class Database {
 		return ($status) ? $this->pdo->lastInsertId() : false;
 	}
 
-	public function delete($table, $id) {
+    /**
+     * @param $table
+     * @param $id
+     * @return bool
+     */
+    public function delete($table, $id) {
         $stm = $this->pdo->prepare('DELETE FROM '.$table.' WHERE id = :id');
         $stm->bindParam(':id', $id);
         $success = $stm->execute();
