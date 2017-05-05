@@ -2,6 +2,7 @@
 use App\Controllers\Controller;
 use App\Database;
 use App\Models\RecipeModel;
+
 use App\Models\UserModel;
 
 // Sökväg till grundmappen i projektet
@@ -78,7 +79,7 @@ switch ($url) {
         //$controller->index();
         require $baseDir.'/views/create.php';
         break;
-	//det här funkar inte.
+
 	case '/create-recipe': //skrivs i urlen
 		// Detta är ett enkelt exempel på hur vi skulle kunna spara datan vid en create.
         //det här är ett controller anrop
@@ -102,13 +103,18 @@ switch ($url) {
         require $baseDir.'/views/edit.php';
         break;
     case '/edit-recipe':
-        $recipeDelete = new RecipeModel($db);
+        //$recipeDelete = new RecipeModel($db);
         //$controller->index();
+        //$recipeModel = new RecipeModel($db);
+
         break;
 
     case '/delete-recipe':
-        $recipeDelete = new RecipeModel($db);
-
+        $recipeModel = new RecipeModel($db);
+        $recipeId = $recipeModel->delete([
+            'id' => $_POST['id']
+        ]);
+        header('Location: /?id='.$recipeId);
         break;
 	default:
 		header('HTTP/1.0 404 Not Found');
