@@ -57,27 +57,42 @@
 <div class="container">
 	<!-- Example row of columns -->
 	<div class="row">
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-				condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-				euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-				condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-				euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
-				porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-				fermentum massa justo sit amet risus.</p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-		</div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Row</th>
+                    <th>Recept</th>
+                    <th>Antal</th>
+                    <th>Svårighetsgrad</th>
+                    <th>Ta bort</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>Carter</td>
+                    <td>johncarter@mail.com</td>
+                    <td>johncarter@mail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Peter</td>
+                    <td>Parker</td>
+                    <td>peterparker@mail.com</td>
+                    <td>johncarter@mail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>John</td>
+                    <td>Rambo</td>
+                    <td>johnrambo@mail.com</td>
+                    <td>johncarter@mail.com</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 	</div>
 
 	<hr>

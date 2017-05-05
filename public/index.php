@@ -14,8 +14,14 @@ require $baseDir . '/vendor/autoload.php';
 $config = require $baseDir. '/config/config.php';
 
 // Normalisera url-sökvägar
-$path = function($uri) {
+/*$path = function($uri) {
 	return ($uri == "/") ? $uri : rtrim($uri, '/');
+};*/
+$path = function($uri) {
+    $uri = ($uri == "/") ? $uri : rtrim($uri, '/');
+    $uri = explode("?", $uri);
+    $uri = array_shift($uri);
+    return $uri;
 };
 
 $dsn = "mysql:host=".$config['host'].";dbname=".$config['db'].";charset=".$config['charset'];
@@ -25,7 +31,7 @@ $db = new Database($pdo);
 
 //Exempel börjar här! Ta bort detta om du vill
 
-$db->create('recipes', [
+/*$db->create('recipes', [
 	'name' => "Makaroner",
 	'quantity' => 5,
 	'recipe_difficulty' => "Easy",
@@ -43,7 +49,7 @@ $recipeModel->create([
 	'quantity' => 2,
 	'recipe_difficulty' => "Hard",
 	'user_id' => 1
-]);
+]);*/
 
 //Exempel slutar här
 
@@ -72,14 +78,26 @@ switch ($url) {
 	//det här funkar inte.
 	case '/create-recipe': //skrivs i urlen
 		// Detta är ett enkelt exempel på hur vi skulle kunna spara datan vid en create.
-		$controller->createRecipe($recipeModel, $_POST);
-		$recipeModel = new RecipeModel($db);
-		$recipeId = $recipeModel->create($_POST);
+        //det här är ett controller anrop
+		//$controller->createRecipe($recipeModel, $_POST);
+        $recipeModel = new RecipeModel($db);
+        $recipeId = $recipeModel->create([
+            'name' => $_POST['name'],
+            'quantity' => $_POST['quantity'],
+            'recipe_difficulty' => $_POST['recipe_difficulty']
+        ]);
+
+
+		//$recipeId = $recipeModel->create($_POST);
 
 		// Dirigera tillbaka till förstasidan efter att vi har sparat.
 		// Vi skickar med id:t på receptet som sparades för att kunna använda oss av det i vår vy.
 		header('Location: /?id='.$recipeId);
 	break;
+    case '/delete-recipe':
+        $recipeDelete = new RecipeModel($db);
+
+        break;
     case '/create':
         //$controller->index();
         require $baseDir.'/views/create.php';

@@ -33,7 +33,7 @@ abstract class Model {
 
 	/**
 	 * @param integer $id
-	 * @return Model
+	 * @return \App\Model
 	 */
 	public function getById($id) {
 		return $this->db->getById($this->table, $id);

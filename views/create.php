@@ -69,15 +69,15 @@
             <form action="/create-recipe" method="post">
                 <div class="form-group">
                     <label>Namn:</label>
-                    <input type="text" class="form-control" id="recipe">
+                    <input type="text" name="name" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Antal: </label>
-                    <input type="text" class="form-control" id="quantity">
+                    <input type="text" name="quantity" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Svårighetsgrad: </label>
-                    <input type="text" class="form-control" id="difficulty">
+                    <input type="text" name="recipe_difficulty" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-default">Lägg till</button>
             </form>
