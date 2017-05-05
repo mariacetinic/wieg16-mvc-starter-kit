@@ -33,4 +33,11 @@ class Controller {
 	public function createRecipe($recipeModel, $data) {
 		return $recipeModel->create($data);
 	}
+
+
+    public function deleteRecipe($recipeModel, $id) {
+        return $recipeModel->delete($id);
+    }
+
 }
+
