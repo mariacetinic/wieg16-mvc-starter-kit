@@ -85,7 +85,7 @@ switch ($url) {
         //det här är ett controller anrop
 		//$controller->createRecipe($recipeModel, $_POST);
         $recipeModel = new RecipeModel($db);
-        $recipeId = $recipeModel->create([
+        $recipeId = $recipeModel->create([ // ja precis create tar en array av kolumner
             'name' => $_POST['name'],
             'quantity' => $_POST['quantity'],
             'recipe_difficulty' => $_POST['recipe_difficulty']
@@ -112,10 +112,8 @@ switch ($url) {
         //eftersom delete är en länk så är det $_GET och inte $_POST(posts används i formulär och i ajax sammanhang
     case '/delete-recipe':
         $recipeModel = new RecipeModel($db);
-        $recipeId = $recipeModel->delete([
-            'id' => $_GET['id']
-        ]);
-
+        $recipeId = $recipeModel->delete($_GET['id']); //men delete tar bara ett id
+        header('Location: /?id='.$recipeId);
         break;
 
 	default:
