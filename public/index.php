@@ -28,7 +28,6 @@ $dsn = "mysql:host=".$config['host'].";dbname=".$config['db'].";charset=".$confi
 $pdo = new PDO($dsn, $config['user'], $config['password'], $config['options']);
 $db = new Database($pdo);
 
-
 //Exempel börjar här! Ta bort detta om du vill
 
 /*$db->create('recipes', [
@@ -41,7 +40,6 @@ $db = new Database($pdo);
 $recipe = $db->getById('recipes', 1);
 $recipes = $db->getAll('recipes');
 
-$recipeModel = new RecipeModel($db);
 $recipe = $recipeModel->getById(1);
 $recipes = $recipeModel->getAll();
 $recipeModel->create([
@@ -72,9 +70,14 @@ $url = $path($_SERVER['REQUEST_URI']);
 switch ($url) {
 	case '/':
 		//$controller->index();
+        $recipeModel = new RecipeModel($db);
+        $recipes = $recipeModel->getAll();
 		require $baseDir.'/views/index.php';
 	break;
-
+    case '/create':
+        //$controller->index();
+        require $baseDir.'/views/create.php';
+        break;
 	//det här funkar inte.
 	case '/create-recipe': //skrivs i urlen
 		// Detta är ett enkelt exempel på hur vi skulle kunna spara datan vid en create.
@@ -94,13 +97,18 @@ switch ($url) {
 		// Vi skickar med id:t på receptet som sparades för att kunna använda oss av det i vår vy.
 		header('Location: /?id='.$recipeId);
 	break;
+    case '/edit':
+        //$controller->index();
+        require $baseDir.'/views/edit.php';
+        break;
+    case '/edit-recipe':
+        $recipeDelete = new RecipeModel($db);
+        //$controller->index();
+        break;
+
     case '/delete-recipe':
         $recipeDelete = new RecipeModel($db);
 
-        break;
-    case '/create':
-        //$controller->index();
-        require $baseDir.'/views/create.php';
         break;
 	default:
 		header('HTTP/1.0 404 Not Found');

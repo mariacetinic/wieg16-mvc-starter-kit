@@ -1,3 +1,7 @@
+<?php
+/* @var $recipes */
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,31 +69,22 @@
                     <th>Recept</th>
                     <th>Antal</th>
                     <th>Svårighetsgrad</th>
-                    <th>Ta bort</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>John</td>
-                    <td>Carter</td>
-                    <td>johncarter@mail.com</td>
-                    <td>johncarter@mail.com</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Peter</td>
-                    <td>Parker</td>
-                    <td>peterparker@mail.com</td>
-                    <td>johncarter@mail.com</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>John</td>
-                    <td>Rambo</td>
-                    <td>johnrambo@mail.com</td>
-                    <td>johncarter@mail.com</td>
-                </tr>
+                <?php foreach ($recipes as $recipe): ?>
+                    <tr>
+                        <td><?= $recipe['id'] ?></td>
+                        <td><?= $recipe['name'] ?></td>
+                        <td><?= $recipe['quantity'] ?></td>
+                        <td><?= $recipe['recipe_difficulty'] ?></td>
+                        <td>
+                            <a href="/edit?id=<?= $recipe['id'] ?>" title="Redigera"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                            <a href="/delete-recipe?id=<?= $recipe['id'] ?>" title="Ta bort"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
