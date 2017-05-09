@@ -1,7 +1,7 @@
 # wieg16-mvc-starter-kit
 
 
-##MVC Projekt
+## MVC Projekt
 
 1. Utbildning och klass: Webbutveckling e-handel, Medieinstutet, wieg16
 2. Uppgiften: Projektet handlar om att visa upp olika maträtter och efterrätter. Du som användare ska kunna se alla samt lägga till recept.
@@ -12,4 +12,4 @@
 7. Linkedin-profil: https://www.linkedin.com/in/maria-cetinic-a5621aab/
 8. Länk till projektet live (om du har egen domän att hosta på)
 
- ###Maria Cetinic
+ ### Maria Cetinic
