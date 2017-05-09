@@ -17,6 +17,7 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/app.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,6 +33,9 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">Startsida</a>
+			<ul class="nav navbar-nav">
+            	<li><a href="http://mvc-app.dev/create">Lägg till recept</a></li>
+        	</ul>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			

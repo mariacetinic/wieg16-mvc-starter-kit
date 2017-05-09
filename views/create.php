@@ -13,6 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,6 +31,9 @@
             <a class="navbar-brand" href="#">Startsida</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Lägg till recept</a></li>
+        </ul>
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
