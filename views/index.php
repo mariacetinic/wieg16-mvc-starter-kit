@@ -14,9 +14,12 @@ include 'header.php'; //visar header och menyn
 		<p>Letar du efter recept? Då har du allt kommit rätt. Här finns recept för alla typer.
 		Gillar du inte det som erbjuds? Vilken tur att du har möjligheten att lägga upp ditt 
 		allra egna recept. Tryck nedan på knappen för att lägga till nya recept eller scrolla ned för att se redan tillagda.
-		Smaklig måltid!</p>
-		<p><a class="btn btn-primary btn-lg" href="http://mvc-app.dev/create" target="_blank" role="button">Lägg till recept</a></p>
-        <p><a class="btn btn-primary btn-lg" href="http://mvc-app.dev/edit" target="_blank" role="button">Uppdatera recept &raquo;</a></p>
+		<small>För dig som vill redigera ett recept kan du enkel göra det genom att trycka på knappen nedan.</small>
+            Smaklig måltid!</p>
+		<p>
+            <a class="btn btn-primary btn-lg" href="http://mvc-app.dev/create" target="_blank" role="button">Lägg till recept &raquo;</a>
+            <a class="btn btn-primary btn-lg" href="http://mvc-app.dev/edit" target="_blank" role="button">Uppdatera recept &raquo;</a>
+        </p>
 
     </div>
 </div>
