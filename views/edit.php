@@ -39,7 +39,7 @@ include 'header.php' //visar header och menyn
         </div>
 
         <div class="col-md-6">
-            <img src="../public/images/update-image.jpg" class="img-responsive">  <!--Varför syns den inte???-->
+            <img src="images/update-image.jpg" class="img-responsive">  <!--Front-end ser publicmappen som sin webbrot. Därför behövs det inte skriva ../public... innan images/..-->
         </div>
 
     </div>
