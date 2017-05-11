@@ -36,21 +36,21 @@ class Database {
 	public function create($table, $data) {
 		$columns = array_keys($data);
 
-		$columnSql = implode(',', $columns);
+		$columnSql = implode(',', $columns); //sätter ihop arrayelement med strängar, i det här fallet är strängen ett ',' t.ex. 'hallonpaj, svårt..'
 		'name,quantity,recipe_difficulty';
 
-		$bindingSql = ':'.implode(',:', $columns);
+		$bindingSql = ':'.implode(',:', $columns); //sätter ihop array element med strängen ',:' t.ex. ':hallonpaj,:svårt....'
 		':name,:quantity,:recipe_difficulty';
 
 		$sql = "INSERT INTO $table ($columnSql) VALUES ($bindingSql)";
-		$stm = $this->pdo->prepare($sql);
+		$stm = $this->pdo->prepare($sql); //förbereder
 
 		foreach ($data as $key => $value) {
-			$stm->bindValue(':'.$key, $value);
+			$stm->bindValue(':'.$key, $value); //binder parametrar
 		}
-		$status = $stm->execute();
+		$status = $stm->execute(); //utför
 
-		return ($status) ? $this->pdo->lastInsertId() : false;
+		return ($status) ? $this->pdo->lastInsertId() : false; //if-else sats.
 	}
 
     /**
@@ -72,19 +72,11 @@ class Database {
 	 * Skriv den här själv!
 	 * Titta på create för strukturidéer
 	 * Du kan binda parametrar precis som i create
-	 * Klura ut hur du skall sätt ihop rätt textsträng för x=y...
 	 * Implode kommer inte ta dig hela vägen den här gången
 	 * Kanske array_map eller foreach?
      */
 
 	public function update($table, $id, $data) {
-		//$columns = array_keys($data);
-
-		/*$data = [
-		    'name' => 'Marcus',
-            'decription' => 'Description...'
-        ];*/
-
         $keys = array_keys($data); //plockar ut nycklarna. Arraymap tar en array och tar element för element. Det som tas från array_map blir det nya värdet
 
         //columns före
@@ -96,8 +88,7 @@ class Database {
         //columns efter
         //['name=:name', 'description=:description'];
 
-        //implode: 'name=:name', 'description=:description'
-        $bindingSql = implode(',', $keys);
+        $bindingSql = implode(',', $keys);  //implode: 'name=:name', 'description=:description'
 
 		$sql = "UPDATE $table SET $bindingSql WHERE id = :id";
         $stm = $this->pdo->prepare($sql);
@@ -111,11 +102,5 @@ class Database {
             return $status;
 	}
 
-	/**
-	 * Titta på getById för struktur
-
-	public function delete($table, $id) {
-
-	}*/
 
 }

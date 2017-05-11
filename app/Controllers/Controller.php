@@ -30,23 +30,5 @@ class Controller {
 		$this->baseDir = $baseDir;
 	}
 
-	public function createRecipe($recipeModel, $data) {
-		return $recipeModel->create($data);
-	}
-
-
-    /**
-     * @param $recipeModel
-     * @param $id
-     * @return mixed
-     */
-    public function deleteRecipe($recipeModel, $id) {
-        return $recipeModel->delete($id);
-    }
-
-    public function updateRecipe($recipeModel, $data) {
-        return $recipeModel->save($data);
-    }
-
 }
 

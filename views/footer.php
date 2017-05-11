@@ -11,7 +11,7 @@ include 'header.php'
 <hr>
 
 	<footer>
-		<p>&copy; 2016 Company, Inc.</p>
+		<p>&copy; 2017 MVC - projekt .</p>
 	</footer>
 </div> <!-- /container -->
 

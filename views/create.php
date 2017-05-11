@@ -51,7 +51,7 @@ include 'header.php' //visar header och menyn
 </div>
 
 <div class="container">
-    <!-- Example row of columns -->
+
     <div class="row">
 
         <div class="col-md-5 col-md-pull-0">

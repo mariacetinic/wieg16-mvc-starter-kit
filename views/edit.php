@@ -14,13 +14,12 @@ include 'header.php' //visar header och menyn
 </div>
 
 <div class="container">
-    <!-- Example row of columns -->
     <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-6 ">
 
             <h2>Uppdatera receptet här</h2>
-            <!-- Receptformuläret -->
+            <!-- Forumulär till uppdatering av recept -->
             <form action="/edit-recipe" method="post">
                 <input type="hidden" name="id" value="<?= $recipe['id'] //<?= betyder echo ?>">
                 <div class="form-group">
@@ -39,10 +38,6 @@ include 'header.php' //visar header och menyn
             </form>
         </div>
 
-
-        <div class="col-md-6">
-
-        </div>
     </div>
 </div>
 
