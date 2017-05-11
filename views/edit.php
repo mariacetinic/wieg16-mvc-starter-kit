@@ -39,7 +39,7 @@ include 'header.php' //visar header och menyn
         </div>
 
         <div class="col-md-6">
-            <img src="../images/update-image.jpg" class="img-responsive"> 
+            <img src="../public/images/update-image.jpg" class="img-responsive">  <!--Varför syns den inte???-->
         </div>
 
     </div>
