@@ -37,7 +37,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php header('Location: /? '); ?>">Startsida</a>
+            <a class="navbar-brand" href="http://mvc-app.dev/">Startsida</a>
             <ul class="nav navbar-nav">
                 <li><a href="http://mvc-app.dev/create">Lägg till recept</a></li>
             </ul>
