@@ -101,7 +101,7 @@ class Database {
 
 		$sql = "UPDATE $table SET $bindingSql WHERE id = :id";
         $stm = $this->pdo->prepare($sql);
-        $data['data'] = $id;
+        $data['id'] = $id;
 
         foreach ($data as  $key => $value) {
             $stm->bindValue(':'.$key, $value);
@@ -109,8 +109,6 @@ class Database {
 
         $status = $stm->execute();
             return $status;
-
-
 	}
 
 	/**
