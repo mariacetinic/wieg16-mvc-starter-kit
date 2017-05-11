@@ -1,5 +1,6 @@
 <?php
 /* @var $recipe */
+include 'header.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
