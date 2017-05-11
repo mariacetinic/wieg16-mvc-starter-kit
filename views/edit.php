@@ -72,7 +72,7 @@
                     <label>Svårighetsgrad: </label>
                     <input type="text" name="recipe_difficulty" class="form-control" value="<?= $recipe['recipe_difficulty'] ?>">
                 </div>
-                <button type="submit" class="btn btn-default">Lägg till</button>
+                <button type="submit" class="btn btn-default">Uppdatera</button>
             </form>
         </div>
 
