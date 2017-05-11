@@ -44,5 +44,9 @@ class Controller {
         return $recipeModel->delete($id);
     }
 
+    public function updateRecipe($recipeModel, $data) {
+        return $recipeModel->save($data);
+    }
+
 }
 

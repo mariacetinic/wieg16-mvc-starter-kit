@@ -75,13 +75,49 @@ class Database {
 	 * Klura ut hur du skall sätt ihop rätt textsträng för x=y...
 	 * Implode kommer inte ta dig hela vägen den här gången
 	 * Kanske array_map eller foreach?
+     */
 
 	public function update($table, $id, $data) {
 		$columns = array_keys($data);
 
-		$sql = "UPDATE $table SET (x=y...) WHERE id = :id";
+		$data = [
+		    'name' => 'Marcus',
+            'decription' => 'Description...'
+        ];
+        $keys = arrays_keys($data); //plockar ut nycklarna
+		//arraymap tar en array och tar element för element. Det som tas från array_map blir det nya värdet
+
+        //columns före
+        ['name', 'decription'];
+        $keys = array_map(function($item) { //för varje steg blir $item nästa steg. Första gången name, andra gången description
+            return $item.'=:'.$item;
+        }, $keys);
+
+        //columns efter
+        ['name=:name', 'decription=:decription'];
+
+        //implode: 'name=:name', 'decription=:decription'
+        $bindingSql = implode(',', $keys);
+
+		$sql = "UPDATE $table SET ($bindingSql) WHERE id = :id";
+        $stm = $this->pdo->prepare($sql);
+        $data = [
+            ':name' => 'Marcus',
+            ':decription' => 'Description...'
+        ];
+
+        $data['data'] = $id;
+
+        foreach ($data as  $key => $value) {
+            $stm->bindValue(':'.$key, $value);
+        }
+
+        $status = $stm->execute();
+            return $status;
+
+
 	}
-     */
+
 	/**
 	 * Skriv den här själv!
 	 * Titta på getById för struktur

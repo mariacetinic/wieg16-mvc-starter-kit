@@ -1,3 +1,7 @@
+<?php
+/* @var $getRecipeId */
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,11 +55,11 @@
     <!-- Example row of columns -->
     <div class="row">
 
-        <div class="col-md-5 col-md-pull-0">
+        <div class="col-md-6">
 
-            <h2>Lägg till recept här</h2>
+            <h2>Uppdatera receptet här</h2>
             <!-- Receptformuläret -->
-            <form action="/create-recipe" method="post">
+            <form action="/edit-recipe" method="get">
                 <div class="form-group">
                     <label>Namn:</label>
                     <input type="text" name="name" class="form-control">
@@ -71,7 +75,13 @@
                 <button type="submit" class="btn btn-default">Lägg till</button>
             </form>
         </div>
+
+
+        <div class="col-md-6">
+
+        </div>
     </div>
+</div>
 
     <hr>
 

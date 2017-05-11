@@ -62,7 +62,6 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Row</th>
                     <th>Recept</th>
                     <th>Antal</th>
                     <th>Svårighetsgrad</th>
@@ -72,7 +71,6 @@
                 <tbody>
                 <?php foreach ($recipes as $recipe): ?>
                     <tr>
-                        <td><?= $recipe['id'] ?></td>
                         <td><?= $recipe['name'] ?></td>
                         <td><?= $recipe['quantity'] ?></td>
                         <td><?= $recipe['recipe_difficulty'] ?></td>

@@ -50,4 +50,12 @@ abstract class Model {
     public function delete($id) {
         return $this->db->delete($this->table, $id);
     }
+
+    public function save($table, $data) {
+	    if(isset($data['id'])) {
+	        return $this->update($table, $data['id'], $data);
+        } else {
+	        return $this->create($table, $data);
+        }
+    }
 }

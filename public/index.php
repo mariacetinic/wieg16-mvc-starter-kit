@@ -73,7 +73,7 @@ switch ($url) {
 		//$controller->index();
         $recipeModel = new RecipeModel($db);
         $recipes = $recipeModel->getAll();
-		require $baseDir.'/views/index.php';
+		require $baseDir.'/views/index.php'; //require hämtar info från en annan sida
 	break;
     case '/create':
         //$controller->index();
@@ -85,7 +85,7 @@ switch ($url) {
         //det här är ett controller anrop
 		//$controller->createRecipe($recipeModel, $_POST);
         $recipeModel = new RecipeModel($db);
-        $recipeId = $recipeModel->create([ // ja precis create tar en array av kolumner
+        $recipeId = $recipeModel->create([ //Create tar en array av kolumner
             'name' => $_POST['name'],
             'quantity' => $_POST['quantity'],
             'recipe_difficulty' => $_POST['recipe_difficulty']
@@ -98,21 +98,30 @@ switch ($url) {
 		// Vi skickar med id:t på receptet som sparades för att kunna använda oss av det i vår vy.
 		header('Location: /?id='.$recipeId);
 	break;
-    case '/edit':
+    case '/edit': //vyn för uppdatera
         //$controller->index();
         require $baseDir.'/views/edit.php';
         break;
+
     case '/edit-recipe':
         //$recipeDelete = new RecipeModel($db);
         //$controller->index();
         //$recipeModel = new RecipeModel($db);
+
+        //$db->update('recipes', id:1, []);
+        $recipeModel = new RecipeModel($db);
+        $recipeNew = $recipeModel->save([ //Create tar en array av kolumner
+            'name' => $_GET['name'],
+            'quantity' => $_GET['quantity'],
+            'recipe_difficulty' => $_GET['recipe_difficulty']
+        ]);
 
         break;
 
         //eftersom delete är en länk så är det $_GET och inte $_POST(posts används i formulär och i ajax sammanhang
     case '/delete-recipe':
         $recipeModel = new RecipeModel($db);
-        $recipeId = $recipeModel->delete($_GET['id']); //men delete tar bara ett id
+        $recipeId = $recipeModel->delete($_GET['id']); //delete tar bara ett id
         header('Location: /?id='.$recipeId);
         break;
 
