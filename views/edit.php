@@ -14,7 +14,7 @@ include 'header.php' //visar header och menyn
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row margin-top">
 
         <div class="col-md-6 ">
 
@@ -39,7 +39,7 @@ include 'header.php' //visar header och menyn
         </div>
 
         <div class="col-md-6">
-            <img src="images/update-image.jpg" class="img-responsive">  <!--Front-end ser publicmappen som sin webbrot. Därför behövs det inte skriva ../public... innan images/..-->
+            <img src="images/update-image.jpg" class="img-responsive">  <!--Front-end ser publicmappen som sin webbrot. Därför behövs det inte skriva ../public... innan images/.. -->
         </div>
 
     </div>
