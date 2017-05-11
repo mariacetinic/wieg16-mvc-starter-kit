@@ -78,34 +78,29 @@ class Database {
      */
 
 	public function update($table, $id, $data) {
-		$columns = array_keys($data);
+		//$columns = array_keys($data);
 
-		$data = [
+		/*$data = [
 		    'name' => 'Marcus',
             'decription' => 'Description...'
-        ];
-        $keys = arrays_keys($data); //plockar ut nycklarna
-		//arraymap tar en array och tar element för element. Det som tas från array_map blir det nya värdet
+        ];*/
+
+        $keys = array_keys($data); //plockar ut nycklarna. Arraymap tar en array och tar element för element. Det som tas från array_map blir det nya värdet
 
         //columns före
-        ['name', 'decription'];
+        //['name', 'description'];
         $keys = array_map(function($item) { //för varje steg blir $item nästa steg. Första gången name, andra gången description
             return $item.'=:'.$item;
         }, $keys);
 
         //columns efter
-        ['name=:name', 'decription=:decription'];
+        //['name=:name', 'description=:description'];
 
-        //implode: 'name=:name', 'decription=:decription'
+        //implode: 'name=:name', 'description=:description'
         $bindingSql = implode(',', $keys);
 
-		$sql = "UPDATE $table SET ($bindingSql) WHERE id = :id";
+		$sql = "UPDATE $table SET $bindingSql WHERE id = :id";
         $stm = $this->pdo->prepare($sql);
-        $data = [
-            ':name' => 'Marcus',
-            ':decription' => 'Description...'
-        ];
-
         $data['data'] = $id;
 
         foreach ($data as  $key => $value) {
@@ -119,7 +114,6 @@ class Database {
 	}
 
 	/**
-	 * Skriv den här själv!
 	 * Titta på getById för struktur
 
 	public function delete($table, $id) {
