@@ -112,11 +112,13 @@ switch ($url) {
 
         //$db->update('recipes', id:1, []);
         $recipeModel = new RecipeModel($db);
+
         $recipeNew = $recipeModel->update($_POST['id'], [ //Create tar en array av kolumner
             'name' => $_POST['name'],
             'quantity' => $_POST['quantity'],
             'recipe_difficulty' => $_POST['recipe_difficulty']
         ]);
+        header('Location: /?id='.$_POST['id']); //omdirigerar till startsidan. Görs inget med id just nu.
 
         break;
 
