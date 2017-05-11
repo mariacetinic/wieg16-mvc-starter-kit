@@ -38,6 +38,10 @@ include 'header.php' //visar header och menyn
             </form>
         </div>
 
+        <div class="col-md-6">
+            <img src="../images/update-image.jpg" class="img-responsive"> 
+        </div>
+
     </div>
 </div>
 
