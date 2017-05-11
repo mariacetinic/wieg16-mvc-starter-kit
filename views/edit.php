@@ -1,6 +1,5 @@
 <?php
-/* @var $getRecipeId */
-
+/* @var $recipe */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,18 +58,19 @@
 
             <h2>Uppdatera receptet här</h2>
             <!-- Receptformuläret -->
-            <form action="/edit-recipe" method="get">
+            <form action="/edit-recipe" method="post">
+                <input type="hidden" name="id" value="<?= $recipe['id'] //<?= betyder echo ?>">
                 <div class="form-group">
                     <label>Namn:</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" value="<?= $recipe['name'] ?>">
                 </div>
                 <div class="form-group">
                     <label>Antal: </label>
-                    <input type="text" name="quantity" class="form-control">
+                    <input type="text" name="quantity" class="form-control" value="<?= $recipe['quantity'] ?>">
                 </div>
                 <div class="form-group">
                     <label>Svårighetsgrad: </label>
-                    <input type="text" name="recipe_difficulty" class="form-control">
+                    <input type="text" name="recipe_difficulty" class="form-control" value="<?= $recipe['recipe_difficulty'] ?>">
                 </div>
                 <button type="submit" class="btn btn-default">Lägg till</button>
             </form>

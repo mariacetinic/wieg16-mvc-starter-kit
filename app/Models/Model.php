@@ -51,11 +51,8 @@ abstract class Model {
         return $this->db->delete($this->table, $id);
     }
 
-    public function save($table, $data) {
-	    if(isset($data['id'])) {
-	        return $this->update($table, $data['id'], $data);
-        } else {
-	        return $this->create($table, $data);
-        }
+    public function update($id, $data)
+    {
+        return $this->db->update($this->table, $id, $data);
     }
 }

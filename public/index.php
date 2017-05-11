@@ -100,6 +100,8 @@ switch ($url) {
 	break;
     case '/edit': //vyn för uppdatera
         //$controller->index();
+        $recipeModel = new RecipeModel($db);
+        $recipe = $recipeModel->getById($_GET['id']);
         require $baseDir.'/views/edit.php';
         break;
 
@@ -110,10 +112,10 @@ switch ($url) {
 
         //$db->update('recipes', id:1, []);
         $recipeModel = new RecipeModel($db);
-        $recipeNew = $recipeModel->save([ //Create tar en array av kolumner
-            'name' => $_GET['name'],
-            'quantity' => $_GET['quantity'],
-            'recipe_difficulty' => $_GET['recipe_difficulty']
+        $recipeNew = $recipeModel->update($_POST['id'], [ //Create tar en array av kolumner
+            'name' => $_POST['name'],
+            'quantity' => $_POST['quantity'],
+            'recipe_difficulty' => $_POST['recipe_difficulty']
         ]);
 
         break;
