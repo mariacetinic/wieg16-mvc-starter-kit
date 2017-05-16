@@ -23,6 +23,10 @@
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+    <script src="less.js" type="text/javascript"></script>
+
+
 </head>
 
 <body>
@@ -37,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://mvc-app.dev/">Startsida</a>
+            <a class="navbar-brand" href="/">Startsida</a>
             <ul class="nav navbar-nav">
                 <li><a href="http://mvc-app.dev/create">Lägg till recept</a></li>
             </ul>
