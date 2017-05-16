@@ -1,27 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Oxygen');
 @red-bg: #ff8080;
 @link-text: #ffd7d7;
-@import url('https://fonts.googleapis.com/css?family=Leckerli+One');
+@cursive-font: 'Pacifico', cursive;
+@width: 100%;
 
+#body-text-style {
+  font-size: 14px;
+  font-family: 'Oxygen', sans-serif;
+}
 
 #brand-logo{
-  font-family: 'Leckerli One', cursive;
+  font-family: @cursive-font;
   font-size: 2em;
 }
 
-.navbar-inverse {
-  background-color: @red-bg;
-  border-color: transparent;
-
-  .navbar-nav li a {
-    color: @link-text;
-  }
-
-  .navbar-brand {
-    color: white;
-    #brand-logo;
-  }
-
+body{
+  #body-text-style;
 }
+
+
+  .navbar-inverse {
+    background-color: @red-bg;
+    border-color: transparent;
+
+    .navbar-nav li a {
+      color: @link-text;
+    }
+
+    .navbar-brand {
+      color: white;
+      #brand-logo;
+    }
+
+  }
+
+  .jumbotron{
+
+    background-image: url("../images/food_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000000;
+
+
+    .container{
+      width: @width - 50;
+      margin-left: 15%;
+    }
+
+    h1{
+      font-family: @cursive-font;
+      line-height: 1.5;
+    }
+    p{
+
+
+      .btn-primary {
+        text-shadow: none;
+        background-color: @red-bg;
+        border-color: transparent;
+      }
+
+    }
+
+  }
+
 
 
 
