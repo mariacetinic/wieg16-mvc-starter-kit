@@ -1,6 +1,6 @@
 <?php
 /* @var $recipes */
-include 'header.php'; //visar header och menyn
+require 'header.php'; //visar header och menyn
 
 ?>
 
@@ -57,5 +57,5 @@ include 'header.php'; //visar header och menyn
 
 
 <?php
-include 'footer.php'; //visar footern
+require 'footer.php'; //visar footern
 ?>

@@ -5,7 +5,6 @@
  * Date: 2017-05-11
  * Time: 16:12
  */
-include 'header.php'
 ?>
 
 <hr>
