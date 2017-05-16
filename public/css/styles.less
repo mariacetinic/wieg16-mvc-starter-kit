@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Oxygen');
-@red-bg: #ff8080;
+@main-red: #ff8080;
+@main-orange: #ffcd8e;
 @link-text: #ffd7d7;
 @cursive-font: 'Pacifico', cursive;
 @width: 100%;
@@ -20,7 +21,7 @@ body{
 
 
   .navbar-inverse {
-    background-color: @red-bg;
+    background-color: @main-red;
     border-color: transparent;
 
     .navbar-nav li a {
@@ -59,12 +60,29 @@ body{
 
       .btn-primary {
         text-shadow: none;
-        background-color: @red-bg;
+        background-color: @main-red;
         border-color: transparent;
       }
 
     }
 
+  }
+
+  table {
+    tbody{
+      tr{
+        td{
+
+          .glyphicon-pencil{
+            color: @main-orange;
+          }
+          .glyphicon-remove{
+            color: @main-red;
+          }
+
+        }
+      }
+    }
   }
 
 
