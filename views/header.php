@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Startsida</a>
+            <a class="navbar-brand" href="/">Foodilicous</a>
             <ul class="nav navbar-nav">
                 <li><a href="http://mvc-app.dev/create">Lägg till recept</a></li>
                 <li><a href="http://mvc-app.dev/edit">Uppdatera recept</a></li>

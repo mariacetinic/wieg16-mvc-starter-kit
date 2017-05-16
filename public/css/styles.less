@@ -1,15 +1,28 @@
 @red-bg: #ff8080;
-@darkgrey-text: #343d46;
+@link-text: #ffd7d7;
+@import url('https://fonts.googleapis.com/css?family=Leckerli+One');
 
+
+#brand-logo{
+  font-family: 'Leckerli One', cursive;
+  font-size: 2em;
+}
 
 .navbar-inverse {
   background-color: @red-bg;
+  border-color: transparent;
 
   .navbar-nav li a {
-    color: @darkgrey-text;
+    color: @link-text;
+  }
+
+  .navbar-brand {
+    color: white;
+    #brand-logo;
   }
 
 }
+
 
 
 
