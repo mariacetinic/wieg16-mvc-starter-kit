@@ -17,8 +17,7 @@ require 'header.php'; //visar header och menyn
 		<small>För dig som vill redigera ett recept kan du enkel göra det genom att trycka på knappen nedan.</small>
             Smaklig måltid!</p>
 		<p>
-            <a class="btn btn-primary btn-lg" href="http://mvc-app.dev/create" target="_blank" role="button">Lägg till recept &raquo;</a>
-            <a class="btn btn-primary btn-lg" href="http://mvc-app.dev/edit" target="_blank" role="button">Uppdatera recept &raquo;</a>
+            <a class="btn btn-primary btn-lg" href="/create" role="button">Lägg till recept &raquo;</a>
         </p>
 
     </div>

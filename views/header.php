@@ -41,8 +41,9 @@
             </button>
             <a class="navbar-brand" href="/">Foodilicous</a>
             <ul class="nav navbar-nav">
+                <li><a href="/">Hem</a></li>
                 <li><a href="/create">Lägg till recept</a></li>
-                <li><a href="/edit">Uppdatera recept</a></li>
+                <li><a href="#">Om oss</a></li> <!-- kommer så småningom-->
             </ul>
         </div>
         <div id="navbar" class="navbar-collapse collapse">

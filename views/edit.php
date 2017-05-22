@@ -7,7 +7,7 @@ require 'header.php' //visar header och menyn
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Här uppdateras: </h1>
+        <h1>Här uppdateras: <?= $recipe['name'] ?></h1>
         <p>Välkommen! Älskar du att dela med dig?  Här har du möjlighet till att lägga till vilket recept du vill. Nedanför får du fylla i allt
             du behöver fylla i. Kör ba kör!</p>
     </div>
@@ -38,7 +38,8 @@ require 'header.php' //visar header och menyn
         </div>
 
         <div class="col-md-6">
-            <img src="images/update-image.jpg" class="img-responsive">  <!--Front-end ser publicmappen som sin webbrot. Därför behövs det inte skriva ../public... innan images/.. -->
+            <img src="/images/update-image.jpg" class="img-responsive">  <!--Front-end ser publicmappen som sin webbrot. Därför behövs det inte skriva ../public... innan images/.. -->
+       <!-- sårbart om du inte sätter "/" framför images -->
         </div>
 
     </div>
