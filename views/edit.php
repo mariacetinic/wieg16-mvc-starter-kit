@@ -1,6 +1,6 @@
 <?php
 /* @var $recipe */
-include 'header.php' //visar header och menyn
+require 'header.php' //visar header och menyn
 ?>
 
 
@@ -14,9 +14,8 @@ include 'header.php' //visar header och menyn
 </div>
 
 <div class="container">
-    <div class="row margin-top">
-
-        <div class="col-md-6 ">
+    <div class="row">
+        <div class="col-md-6">
 
             <h2>Uppdatera receptet här</h2>
             <!-- Forumulär till uppdatering av recept -->
@@ -47,5 +46,5 @@ include 'header.php' //visar header och menyn
 
 
 <?php
-include 'footer.php'; //visar footern
+require 'footer.php'; //visar footern
 ?>
